@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<title>Nome do TCC</title>
+<title>Login e Cadastro</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <link rel="stylesheet" href="../css/CSS.css">
@@ -11,7 +11,7 @@
 <body>
     
     <form method="POST" action="../includes/login_inc.php">
-    <form method="POST" action="./perfil.php">
+    
         <div class="log">
             <h4>Login:</h4>
             <input type="text" name="email" placeholder="E-mail">        <br>
@@ -20,7 +20,7 @@
 
             Não possui uma conta ainda? <a href=cadastro.php>Cadastre-se</a>
         </div>
-    </form>
+    
     </form>
 </body>
 </html>

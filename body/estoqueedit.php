@@ -28,7 +28,7 @@
                             <td><input type="number" name="quantprod" value="<?php echo $array['quantidade_prodquimico'];?>"></td>
                             <input type="hidden" name="idprod" value="<?php echo $array['id_prodquimico'];?>">
                         <?php } ?>
-                        <td><button type="submit">Atualizar</button>
+                        <td><button type="submit">Salvar</button>
                     </tr>
                 </tbody>
             </table>
