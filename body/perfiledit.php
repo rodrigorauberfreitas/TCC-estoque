@@ -32,17 +32,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="utf-8">
 </head>
-<body>
+<body class="nav-wrapper blue-grey darken-2">
     <nav>
-        <div class="nav-wrapper purple darken-2">
+        <div class="nav-wrapper blue-grey darken-4">
             <a href="#" class="brand-logo center">QuimicStock</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="./pginicial.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
+                <li><a href="./perfil.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
             </ul>
         </div>
-    </nav>
-    <div class="container">
-        <div class="log"> 
+	</nav>
+    <div class="container blue-grey darken-2">
+        <div class="log blue-grey darken-4"> 
             <div class="center-text">
             <form method="POST" action="../includes/perfiledit_inc.php" class="form-inline">
                 <center><h4 class="titulo"> Perfil </h4>
@@ -62,7 +62,7 @@
                     
                     <input type="hidden" name="id_usuarios" value="<?php echo $arrayid['id_usuarios'];?>">
 
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Aplicar
+                    <button class="btn waves-effect waves-light blue-grey darken-2" type="submit" name="action">Aplicar
                     <i class="material-icons right">check</i></button>
 
                 </center>

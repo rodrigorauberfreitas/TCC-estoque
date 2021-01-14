@@ -10,9 +10,11 @@
         $nome_prod = strtolower($_POST["nome_prodquimico"]);
         $filtro = " WHERE LOWER (nome_prodquimico) like '%$nome_prod%'";
     }
-    $consulta = "SELECT nome_prodquimico, quantidade_prodquimico, id_prodquimico FROM cadastro_prodquimico $filtro;";
+    $consulta = "SELECT nome_prodquimico, quantidade_prodquimico, id_prodquimico, id_foto FROM cadastro_prodquimico $filtro;";
     
     $query = mysqli_query($conn, $consulta);
+
+  
 
 ?>
 <html>
@@ -31,7 +33,7 @@
    
     <nav class="blue-grey darken-4" role="navigation">
         <div class="nav-wrapper">
-            <a id="logo-container" href="#" class="brand-logo center">Logo</a>
+            <a id="logo-container" href="#" class="brand-logo center">QuimicStock</a>
             <ul class="right hide-on-med-and-down">
                 
                 <li><a href="./adm/controleusuarios.php">Administração de Usuários</a></li>
@@ -76,7 +78,7 @@
 
         <p></p>
 
-        <a href="./estoquecad.php" class="waves-effect waves-light btn blue-grey darken-4"><i class="material-icons right">add_circle</i>Adicionar Produto </a>    
+        <a href="./estoquecad.php" class="waves-effect waves-light btn blue-grey darken-4"><i class="material-icons right">add</i>Adicionar Produto</a>    
         
         <div class="container">
             <div class="row">
@@ -88,7 +90,7 @@
                     <div class="col s4">
                         <div class="card small">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="../imagens/imagem1.jpg">
+                                <img class="activator" src="../fotos_prod/<?php echo $array['id_foto'] . ".jpg"; ?>">
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4"><?php echo $array['nome_prodquimico'];?><i class="material-icons right">more_vert</i></span>

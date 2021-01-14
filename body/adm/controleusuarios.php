@@ -34,12 +34,12 @@
         </ul>
         </div>
 	</nav>
-	<center>
-		<h3 class="white-text">Administração de Usuários</h3>
-	</center>
+	
+		<h3 class="white-text center">Administração de Usuários</h3>
+	
 	<div class="container">
 	
-	<nav>
+		<nav>
             <div class="nav-wrapper blue-grey darken-4">
             <form method="POST">
                 <div class="input-field">

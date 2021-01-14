@@ -34,11 +34,12 @@
 <body class="blue-grey darken-2">
     <nav>
         <div class="nav-wrapper blue-grey darken-4">
-        <a href="#" class="brand-logo center">QuimicStock</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="./pginicial.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
-        </ul>
+            <a href="#" class="brand-logo center">QuimicStock</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="./pginicial.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
+            </ul>
         </div>
+	</nav>
     </nav>
     <div class="container">
         <div class="log blue-grey darken-4"> 

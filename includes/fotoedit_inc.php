@@ -3,7 +3,7 @@
     include "./conexao.php";
 
     $id_usuario = $_POST['id'];
-    echo "<h1> id= $id_usuario </h1>";
+    //echo "<h1> id= $id_usuario </h1>";
     $imagem = $_FILES["imagem"];
     $diretorio = "../fotos/";
     //echo getcwd();
