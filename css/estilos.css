@@ -7,7 +7,9 @@
 .borda{
     
     
-    border: 3px solid #455a64;
+    border-bottom: 1px solid #455a64;
+    border-top: 1px solid #455a64;
+
     color:white;
 
 }
@@ -24,10 +26,9 @@
 }
 
 .log{
-    width:  300px ;
-    height: 500px ;
+    height: 600px ;
+    /*width:  300px ;
     position: absolute;
-    
     color: white;
    
     -webkit-box-shadow: 13px 13px 10px 0px rgba(50, 50, 50, 0.6);
@@ -37,8 +38,16 @@
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%)   
+    transform: translate(-50%, -50%)   */
     }
+
+.perfil_edit{
+    height: 600px;
+}
+.perfil_edit2{
+    margin-left: 8%;
+    margin-right: 8%;
+}
 
 .linha{
     width: 140px;
@@ -55,17 +64,10 @@
 }
 
 .foto_area{
-    height: 240px;
-    width: 200px;
-    top: 20%;
-    left: 22%;
-    margin-right: 50%;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 1);
+   
+    
 
-    -webkit-box-shadow: 13px 13px 10px 0px rgba(50, 50, 50, 0.6);
-    -moz-box-shadow:    13px 13px 10px 0px rgba(50, 50, 50, 0.6);
-    box-shadow:         13px 13px 10px 0px rgba(50, 50, 50, 0.6);
+
 }
 
 .form-inline, .center-text {
@@ -77,8 +79,11 @@
 
 
  .cadbar{
-    width:  500px ;
-    height: 750px ;
+    height: 800px ;
+
+    
+    /*width:  500px ;
+   
     position: absolute;
 
     top: 74%;
@@ -88,5 +93,48 @@
 
     -webkit-box-shadow: 13px 13px 10px 0px rgba(50, 50, 50, 0.6);
     -moz-box-shadow:    13px 13px 10px 0px rgba(50, 50, 50, 0.6);
-    box-shadow:         13px 13px 10px 0px rgba(50, 50, 50, 0.6);
+    box-shadow:         13px 13px 10px 0px rgba(50, 50, 50, 0.6); */
+ }
+ .cadbar2{
+     margin-left: 5%;
+     margin-right: 5%;
+ }
+ .cadbar3{
+     margin-left: 20%;
+     margin-right: 20%;
+ }
+
+ .viewprod{
+    
+    height: 600px ;
+    
+    
+    
+
+   /* top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+    -webkit-box-shadow: 13px 13px 10px 0px rgba(46, 32, 32, 0.6);
+    -moz-box-shadow:    13px 13px 10px 0px rgba(50, 50, 50, 0.6);
+    box-shadow:         13px 13px 10px 0px rgba(50, 50, 50, 0.6);*/
+ }
+
+ .fotoedit_size{
+    height: 300px;
+ }
+ .fotoedit_margin{
+     margin-left: 5%;
+     margin-right: 5%;
+ }
+
+
+ .editbar{
+     height: 750px;
+ }
+
+ .editbar2{
+     margin-left: 5%;
+     margin-right: 5%;
  }

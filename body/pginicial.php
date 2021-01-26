@@ -2,6 +2,8 @@
     include "../includes/logout_inc.php";
     include "../includes/conexao.php";
 
+    $id_usuario = $_SESSION['id_usuario'];
+
     $filtro = "";
     $nome_prod = "";
   
@@ -10,10 +12,17 @@
         $nome_prod = strtolower($_POST["nome_prodquimico"]);
         $filtro = " WHERE LOWER (nome_prodquimico) like '%$nome_prod%'";
     }
-    $consulta = "SELECT nome_prodquimico, quantidade_prodquimico, id_prodquimico, id_foto FROM cadastro_prodquimico $filtro;";
+    $consulta = "SELECT nome_prodquimico, quantidade_prodquimico, id_prodquimico, id_foto, valores_prodquimico FROM cadastro_prodquimico $filtro;";
     
     $query = mysqli_query($conn, $consulta);
 
+
+    $consulta2 = "SELECT tipo_usuarios FROM usuarios WHERE id_usuarios = '$id_usuario';";
+
+    $query2 = mysqli_query($conn, $consulta2);
+
+    $tipo_array = $query2->fetch_array();
+    $tipo = $tipo_array['tipo_usuarios'];
   
 
 ?>
@@ -35,19 +44,27 @@
         <div class="nav-wrapper">
             <a id="logo-container" href="#" class="brand-logo center">QuimicStock</a>
             <ul class="right hide-on-med-and-down">
+                <?php if($tipo == 2){ ?>
+                    <li><a href="./adm/controleusuarios.php">Administração de Usuários</a></li>
+                <?php } ?>
                 
-                <li><a href="./adm/controleusuarios.php">Administração de Usuários</a></li>
+                
+                <li><a href="./historico.php">Histórico de Transações</a></li>
                 
                 <li><a href="./perfil.php">Perfil</a></li>
-                
+              
                 <li><a href="../includes/logouting_inc.php">Sair</a></li>
             </ul>
-
+        
             <ul id="mobile-navbar" class="sidenav">
-                <li><a href="./adm/controleusuarios.php">Administração de Usuários</a></li>
-                    
                 <li><a href="./perfil.php">Perfil</a></li>
-                    
+                
+                <li><a href="./historico.php">Histórico de Transações</a></li>
+
+                <?php if($tipo == 2){ ?>
+                <li><a href="./adm/controleusuarios.php">Administração de Usuários</a></li>
+                <?php } ?>  
+
                 <li><a href="../includes/logouting_inc.php">Sair</a></li>
             </ul>
             <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -77,31 +94,48 @@
 
 
         <p></p>
+        <?php if($tipo == 0){ 
+         
+         }else{  ?>
+         <a href="./estoquecad.php" class="waves-effect waves-light btn blue-grey darken-4"><i class="material-icons right">add</i>Adicionar Produto</a>    
 
-        <a href="./estoquecad.php" class="waves-effect waves-light btn blue-grey darken-4"><i class="material-icons right">add</i>Adicionar Produto</a>    
-        
+         <?php } ?>
         <div class="container">
             <div class="row">
                 <br><br>
 
                 <?php 
                 while($array = $query->fetch_array()){ 
+                    
+                    $valor = 0;
+                    if($array['valores_prodquimico'] == 1){
+                        $valor = "g";
+                    }else if($array['valores_prodquimico'] == 2){
+                        $valor = "Kg";
+                    }else if($array['valores_prodquimico'] == 3){
+                        $valor = "ml";
+                    }else if($array['valores_prodquimico'] == 4){
+                        $valor = "L";
+                    }
+                    
                     ?>
+                    
                     <div class="col s4">
-                        <div class="card small">
+                        <div class="card small blue-grey darken-4">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="../fotos_prod/<?php echo $array['id_foto'] . ".jpg"; ?>">
                             </div>
                             <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4"><?php echo $array['nome_prodquimico'];?><i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">This is a link</a></p>
+                                <span class="card-title activator white-text"><?php echo $array['nome_prodquimico'];?><i class="material-icons right">more_vert</i></span>
+                                <p><a href="./produto.php?id_prod=<?php echo $array['id_prodquimico'];?>">Clique para ver mais!</a></p>
                             </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4"><?php echo $array['nome_prodquimico'];?><i class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked on. <br><a href="#">Clique para ver mais!</a></p></p>
+                            <div class="card-reveal blue-grey darken-4">
+                                <span class="card-title white-text"><?php echo $array['nome_prodquimico'];?><i class="material-icons right">close</i></span>
+                                <p class="white-text">Quantidade do produto em estoque: <?php echo $array['quantidade_prodquimico']. $valor;?> <br><a href="./produto.php?id_prod=<?php echo $array['id_prodquimico'];?>">Clique para ver mais!</a></p></p>
                             </div>
                         </div>
                     </div>
+                    
                 <?php } ?>
         
             </div>

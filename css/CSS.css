@@ -1,14 +1,8 @@
 
 
 .log{
-width:  300px ;
-height: 200px ;
-position: absolute;
+    height: 300px ;
 
-top: 50%;
-left: 50%;
-margin-right: -50%;
-transform: translate(-50%, -50%)   
 }
 
 .borda{
@@ -26,6 +20,19 @@ transform: translate(-50%, -50%)
     width: 200px;
 }
 
+
+.titulo{
+    border-bottom: 3px solid #455a64 ;
+}
+
+.bordinha{
+    border-left: 3px solid #455a64;
+}
+
+.input_margin{
+    width: 80%;
+    
+}
 
 
 

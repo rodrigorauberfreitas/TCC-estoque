@@ -3,19 +3,11 @@
     include "../includes/logout_inc.php";
     include "../includes/conexao.php";
     
-    $email = $_SESSION['email'];
-    $senha = $_SESSION['senha'];
-    
-    $consulta = mysqli_query($conn, "SELECT id_usuarios, email_usuarios, senha_usuarios FROM usuarios WHERE email_usuarios='{$email}' and senha_usuarios='{$senha}'");
-    $arrayid = $consulta->fetch_array();
-    $id_session = $arrayid["id_usuarios"];
-    
-    //deu trabalho pegar esse id, não APAGAR
-    //$_session["login"] = $login_user;
+    $id_session = $_SESSION['id_usuario'];
+ 
     
     
-    
-    $sql = "SELECT nome_usuarios, email_usuarios, tipo_usuarios FROM usuarios where id_usuarios = '$id_session'";
+    $sql = "SELECT nome_usuarios, email_usuarios, senha_usuarios, tipo_usuarios FROM usuarios where id_usuarios = '$id_session'";
 	$con = mysqli_query($conn, $sql);
     
     $array = $con->fetch_array();
@@ -33,40 +25,56 @@
     <meta charset="utf-8">
 </head>
 <body class="nav-wrapper blue-grey darken-2">
-    <nav>
+<nav>
         <div class="nav-wrapper blue-grey darken-4">
-            <a href="#" class="brand-logo center">QuimicStock</a>
+            <a href="./pginicial.php" class="brand-logo center">QuimicStock</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="./perfil.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
             </ul>
+            <ul id="mobile-navbar" class="sidenav">
+                <li><a href="./perfil.php">Voltar</a></li>
+            </ul>
+            <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
-	</nav>
-    <div class="container blue-grey darken-2">
-        <div class="log blue-grey darken-4"> 
-            <div class="center-text">
-            <form method="POST" action="../includes/perfiledit_inc.php" class="form-inline">
-                <center><h4 class="titulo"> Perfil </h4>
-            
-                    <br>
-                    <div class="borda2">Nome do usuário</div>
-                    <input type="text" name="nome_usuarios" value="<?php echo $array["nome_usuarios"]; ?>">
-                    <br><br>
+    </nav>
+    <br>
+    <div class="container blue-grey darken-2 responsive center z-depth-5 white-text">
+        <div class="row responsive blue-grey darken-4">
+            <div class="col s3"></div>
 
-                    E-mail
-                    <input type="text" name="email_usuarios" value="<?php echo $array["email_usuarios"]; ?>"> 
-                    <br><br>
+            <div class="col s6 blue-grey darken-2 center">
+                <div class="perfil_edit blue-grey darken-4 white-text"> 
+                    <div class="perfil_edit2">
+                        <form method="POST" action="../includes/perfiledit_inc.php" class="form-inline">
+                            
+                            <h4 class="titulo"> Perfil </h4>
+                        
+                            <br>
+                            Nome do usuário
+                            <input class="white-text" type="text" name="nome_usuarios" value="<?php echo $array["nome_usuarios"]; ?>">
+                            <br><br>
 
-                    Senha
-                    <input name="senha_usuarios" type="password" value="<?php echo $senha;?>">
-                    <br><br><br><br>
-                    
-                    <input type="hidden" name="id_usuarios" value="<?php echo $arrayid['id_usuarios'];?>">
+                            E-mail
+                            <input class="white-text" type="email" name="email_usuarios" value="<?php echo $array["email_usuarios"]; ?>"> 
+                            <br><br>
 
-                    <button class="btn waves-effect waves-light blue-grey darken-2" type="submit" name="action">Aplicar
-                    <i class="material-icons right">check</i></button>
+                            Senha
+                            <input class="white-text" name="senha_usuarios" type="password" value="<?php echo $array["senha_usuarios"];?>">
+                            <br><br><br><br>
+                                
+                            <input type="hidden" name="id_usuarios" value="<?php echo $id_session;?>">
 
-                </center>
-            </form>
+                            <button class="btn waves-effect waves-light blue-grey darken-2" type="submit" name="action">Aplicar
+                            <i class="material-icons right">check</i></button>
+
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col s3"></div>
+        </div>
     </div>   
+    <script src="../js/mobile.js"></script>
 </body>
 </html>

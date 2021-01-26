@@ -2,6 +2,16 @@
    include "../../includes/logout_inc.php";
    include "../../includes/conexao.php";
 
+    $id_usuario = $_SESSION['id_usuario'];
+	
+    $consulta2 = "SELECT tipo_usuarios FROM usuarios WHERE id_usuarios = '$id_usuario';";
+
+	$query2 = mysqli_query($conn, $consulta2);
+
+    $tipo_array = $query2->fetch_array();
+	$tipo = $tipo_array['tipo_usuarios'];
+	
+	if($tipo == 2){
 	
    $filtro = "";
    $nome_usu = "";
@@ -26,14 +36,25 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="blue-grey darken-2">
-	<nav>
-        <div class="nav-wrapper blue-grey darken-4">
-        <a href="#" class="brand-logo center">QuimicStock</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="../pginicial.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
-        </ul>
+	<nav class="blue-grey darken-4" role="navigation">
+        <div class="nav-wrapper">
+            <a id="logo-container" href="../pginicial.php" class="brand-logo center">QuimicStock</a>
+            <ul class="left hide-on-med-and-down">
+				<li><a href="../pginicial.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
+            </ul>
+        
+            <ul id="mobile-navbar" class="sidenav">
+				<li><a href="../pginicial.php">Voltar ao Início</a></li>
+
+                <li><a href="../perfil.php">Perfil</a></li>
+                
+                <li><a href="../historico.php">Histórico de Transações</a></li>
+                    
+                <li><a href="../../includes/logouting_inc.php">Sair</a></li>
+            </ul>
+            <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
-	</nav>
+    </nav>
 	
 		<h3 class="white-text center">Administração de Usuários</h3>
 	
@@ -53,7 +74,7 @@
 		
 		<table class="striped">
 			
-			<thead>	
+			<thead class="white-text">	
 			<th>Nome</th>
 			<th>Email</th>
 			<th>Tipo</th>
@@ -112,6 +133,12 @@
 		</table>
 	</div>
 
-
+	<script src="../../js/mobile.js"></script>
 </body>
-</html
+</html>
+
+<?php
+	}else{
+		header("location:../pginicial.php");
+	}
+?>

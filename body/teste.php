@@ -140,3 +140,56 @@
         </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4 class="titulo">Cadastro de Produtos</h4> <br>
+                        
+                        Nome do produto 
+                        <input type="text" name="nome_prod"> <br>
+                        
+                        Quantidade do produto            
+                        <input type="text" name="quant_prod">
+
+                        
+                           <select id="medidas" name="medida_prod">
+                              <option value="1" selected>Gramas (g)</option>
+                              <option value="2">Quilogramas (KG)</option>
+                              <option value="3">Mililitros (mL)</option>
+                              <option value="4">Litros (L)</option>
+                           </select>
+                        
+                        <br><br>
+                        
+                        Fórmula do produto 
+                        <input type="text" name="formula_prod">   <br>
+                        
+                        Local de armazenamento
+                        <input type="text" name="local_prod">                  <br>
+               
+                        Inserir foto
+                        <input type="file" name="imagem">
+                        
+                        Outras observações 
+                        <textarea name="obs_prod"></textarea>  <br>
+
+                        <button onClick="javascript:setaData();" class="btn waves-effect waves-light blue-grey darken-2" type="submit" name="action">Cadastrar
+                                 <i class="material-icons right">check</i></button>

@@ -1,4 +1,5 @@
 <?php
+    include "./logout_inc.php";
     include "./conexao.php";
 
     $nome_usuarios  = $_POST['nome_usuarios'];

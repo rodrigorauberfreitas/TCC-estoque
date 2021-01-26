@@ -1,38 +1,133 @@
-<?php
-    include "../includes/conexao.php";
+<?php 
+   include "../includes/logout_inc.php";
+   include "../includes/conexao.php";
 
-    $id = $_GET['edit'];
-    $consulta = "SELECT nome_prodquimico, quantidade_prodquimico, id_prodquimico FROM cadastro_prodquimico WHERE id_prodquimico = $id";
-    $query = mysqli_query($conn, $consulta);
+   $id_usuario = $_SESSION['id_usuario'];
+	
+   $consulta2 = "SELECT tipo_usuarios FROM usuarios WHERE id_usuarios = '$id_usuario';";
+
+	$query2 = mysqli_query($conn, $consulta2);
+
+   $tipo_array = $query2->fetch_array();
+	$tipo = $tipo_array['tipo_usuarios'];
+
+	if($tipo == 0){
+		header("location:./pginicial.php");
+	}else{
+
+    $id_prod = $_GET['id_prod'];
+
+    $consulta = "SELECT nome_prodquimico, quantidade_prodquimico, valores_prodquimico, formula_prodquimico, observacao_prodquimico, local_prodquimico, id_foto FROM cadastro_prodquimico where id_prodquimico = '$id_prod';";
+    $con = mysqli_query($conn, $consulta);
+    
+    $array = $con->fetch_array();
+
+    $valor = 0;
+    if($array['valores_prodquimico'] == 1){
+        $valor = "g";
+    }else if($array['valores_prodquimico'] == 2){
+        $valor = "Kg";
+    }else if($array['valores_prodquimico'] == 3){
+        $valor = "ml";
+    }else if($array['valores_prodquimico'] == 4){
+        $valor = "L";
+                    }
 ?>
 <html>
 <head>
-<title>Nome do TCC</title>
+<title>Editar Produto</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="../css/CSS.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script> 
+      
+      <script>
+         $(document).ready(function() {
+            $('select').material_select();
+         });
+      </script>
+
+   <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-    <form method="POST" action="../includes/estoqueedit_inc.php">
-        <div class="container">
-            <table class="table">
-                <thead>
-                    <th>Nome do Produto</th>
-                    <th>Quantidade do Produto</th>
-                <thead>
-                <tbody>
-                    <tr>
-                        <?php while($array = $query->fetch_array()) { ?>
-                            <td><input type="text" name="nomeprod" value="<?php echo $array['nome_prodquimico'];?>"></td>
-                            <td><input type="number" name="quantprod" value="<?php echo $array['quantidade_prodquimico'];?>"></td>
-                            <input type="hidden" name="idprod" value="<?php echo $array['id_prodquimico'];?>">
-                        <?php } ?>
-                        <td><button type="submit">Salvar</button>
-                    </tr>
-                </tbody>
-            </table>
+<body class="blue-grey darken-2">
+   <nav>
+        <div class="nav-wrapper blue-grey darken-4">
+            <a href="./pginicial.php" class="brand-logo center">QuimicStock</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+               <li><a href="./produto.php<?php echo "?id_prod=" . $id_prod; ?>"><i class="material-icons left">chevron_left</i>Voltar</a></li>
+            </ul>
+            <ul id="mobile-navbar" class="sidenav">
+               <li><a href="./produto.php<?php echo "?id_prod=" . $id_prod; ?>">Voltar</a></li>
+            </ul>
+            <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
-    </form>    
+    </nav>
+
+      <br>
+         <div class="container responsive center z-depth-5 white-text">
+            <div class="row responsive blue-grey darken-4">
+               <div class="col s3">
+                  <form method="POST" action="../includes/estoqueedit_inc.php">
+                     <input type="hidden" name="id_prod" value="<?php echo $id_prod;?>">
+               </div>
+
+               <div class="col s6 blue-grey darken-2 center">
+                  <div class="editbar blue-grey darken-4 center">
+                     <div class="editbar2">
+                        <br>
+                        <h4 class="titulo">Edição de Produtos</h4> <br>
+                        
+                        Nome do produto 
+                        <input type="text" name="nome_prod" value="<?php echo $array['nome_prodquimico']; ?>"> 
+                        <br><br>
+                        
+                        Quantidade do produto         
+                        <input type="number" name="quant_prod" value="<?php echo $array['quantidade_prodquimico']; ?>">
+                        
+                        
+                        <select id="medidas" name="medida_prod" class="cadbar3">
+                           <option value="1" selected>Gramas (g)</option>
+                           <option value="2">Quilogramas (KG)</option>
+                           <option value="3">Mililitros (mL)</option>
+                           <option value="4">Litros (L)</option>
+                        </select>
+                        
+                        
+                        <br><br>
+                        
+                        Fórmula do produto 
+                        <input type="text" name="formula_prod" value="<?php echo $array['formula_prodquimico']; ?>">   <br> <br>
+                        
+
+                        Local de armazenamento
+                        <input type="text" name="local_prod" value="<?php echo $array['local_prodquimico']; ?>">                  <br><br>
+                        
+                        
+                        Outras observações <textarea name="obs_prod"><?php echo $array['observacao_prodquimico']; ?></textarea>  <br>
+                       
+                        <br>
+                        <button class="btn waves-effect waves-light blue-grey darken-2" type="submit" name="action">Aplicar
+                                 <i class="material-icons right">check</i></button>
+                     </div>
+                  </div>
+               </div>
+               <div class="col s3"></div>
+            </div>   
+         </div>
+      </form>
+ 
+      <script src="../js/mobile.js"></script>
+
 </body>
 </html>
+
+<?php } ?>

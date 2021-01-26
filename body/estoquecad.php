@@ -1,4 +1,20 @@
+<?php
+   include "../includes/logout_inc.php";
+   include "../includes/conexao.php";
 
+   $id_usuario = $_SESSION['id_usuario'];
+
+   $consulta2 = "SELECT tipo_usuarios FROM usuarios WHERE id_usuarios = '$id_usuario';";
+
+   $query2 = mysqli_query($conn, $consulta2);
+
+   $tipo_array = $query2->fetch_array();
+   $tipo = $tipo_array['tipo_usuarios'];
+
+   if($tipo == 0){
+      header("location:./pginicial.php");
+   }else{
+?>
 
 <html>
 <head>
@@ -20,61 +36,86 @@
          });
       </script>
 
-    <link rel = "stylesheet" href = "../css/estilos.css">
+
+
+   <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="blue-grey darken-2">
-   <nav>
+      <nav>
         <div class="nav-wrapper blue-grey darken-4">
-        <a href="#" class="brand-logo center">QuimicStock</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="./pginicial.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
-        </ul>
+            <a href="./pginicial.php" class="brand-logo center">QuimicStock</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="./pginicial.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
+            </ul>
+            <ul id="mobile-navbar" class="sidenav">
+                <li><a href="./pginicial.php">Voltar ao Início</a></li>
+            </ul>
+            <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
-	</nav>
- 
-      <form method="POST" action="../includes/estoquecad_inc.php" enctype="multipart/form-data">
-         <div class="container white-text">
-            <div class="row">
-               <div class="cadbar blue-grey darken-4">
-                  <div class="center-text">
-                    <h4 class="titulo">Cadastro de Produtos</h4> <br>
-                     <div class="col s7 center">
-                        Nome do produto <input type="text" name="nome_prod"> 
-                     </div>  <br>
-                     
-                     Quantidade do produto
-                     <div class="col s7">             
-                         <input type="number" name="quant_prod">
-                     </div>
-                     <div class="col s5"> 
-                        <select id="medidas" name="medida_prod">
-                           <option value="1" selected>Gramas (g)</option>
-                           <option value="2">Quilogramas (KG)</option>
-                           <option value="3">Mililitros (mL)</option>
-                           <option value="4">Litros (L)</option>
-                        </select>
-                     </div>
-                     
-                     <br><br>
-                     <div class="col s7 center">
-                        Fórmula do produto <input type="text" name="formula_prod">   <br>
-                     </div>
-                     Local de armazenamento
-                     <div class="col s7">
-                         <input type="text" name="local_prod">                  <br>
-                     </div>
-                     Inserir foto
-                     <input type="file" name="imagem">
-                     <br>
-                     Outras observações <textarea name="obs_prod"></textarea>  <br>
-                     <button class="btn waves-effect waves-light blue-grey darken-2" type="submit" name="action">Cadastrar
-                              <i class="material-icons right">check</i></button>
-                  </div>
-               </div>
-            </div>   
+    </nav>
+   <br>   
+   <div class="container responsive center z-depth-5 white-text">
+      <div class="row responsive blue-grey darken-4">
+               
+         <div class="col s3">
+            <form method="POST" action="../includes/estoquecad_inc.php" enctype="multipart/form-data">
+               <input type="hidden" value=" " id="horas" name="horas">
          </div>
-      </form>
- 
+            
 
+         <div class="col s6 blue-grey darken-2 center">
+            <div class="cadbar blue-grey darken-4 center"> 
+               <div class="cadbar2">
+                  <br>
+                  
+                  <h4 class="titulo">Cadastro de Produtos</h4> <br>
+                           
+                  Nome do produto 
+                  <input type="text" name="nome_prod"> <br><br>
+                           
+                  Quantidade do produto            
+                  <input type="text" name="quant_prod">
+
+                  <div class="cadbar3">     
+                     <select id="medidas" name="medida_prod">
+                        <option value="1" selected>Gramas (g)</option>
+                        <option value="2">Quilogramas (KG)</option>
+                        <option value="3">Mililitros (mL)</option>
+                        <option value="4">Litros (L)</option>
+                     </select>
+                  </div>
+                  <br><br>
+                           
+                  Fórmula do produto 
+                  <input type="text" name="formula_prod">   <br><br>
+                           
+                  Local de armazenamento
+                  <input type="text" name="local_prod">                  <br><br>
+                  
+                  Inserir foto
+                  <input type="file" name="imagem"> <br><br>
+                           
+                  Outras observações 
+                  <textarea name="obs_prod"></textarea>  <br><br>
+
+                  <button onClick="javascript:setaData();" class="btn waves-effect waves-light blue-grey darken-2" type="submit" name="action">Cadastrar
+                  <i class="material-icons right">check</i></button>
+
+            </form>
+               </div>
+            </div>
+         </div>
+         <div class="col s3"></div>
+
+      </div>
+   </div>  
+      
+ 
+   <script type="text/javascript" src="../js/mobile.js"></script>
 </body>
 </html>
+
+<?php } ?>
