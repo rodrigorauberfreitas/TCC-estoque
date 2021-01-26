@@ -5,7 +5,7 @@ include "./conexao.php";
 $nome = $_POST['nome'];
 $email = $_POST['emailcad'];
 $senha = $_POST ['senhacad'];
-
+$senha = md5($senha);
 $sql = "insert into usuarios  (nome_usuarios, email_usuarios, senha_usuarios) values ('$nome'  , '$email', '$senha')";
 
 

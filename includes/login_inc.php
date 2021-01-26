@@ -4,6 +4,8 @@
    include_once "./conexao.php";
    $email = $_POST["email"];
    $senha = $_POST["senha"];
+
+   $senha = md5($senha);
    //echo $email. $senha;
   if(empty($email) or empty($senha)){
     $_SESSION['ERROS'] = "Campos não podem se nulos";

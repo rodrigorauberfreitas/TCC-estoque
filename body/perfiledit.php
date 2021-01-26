@@ -59,7 +59,7 @@
                             <br><br>
 
                             Senha
-                            <input class="white-text" name="senha_usuarios" type="password" value="<?php echo $array["senha_usuarios"];?>">
+                            <input class="white-text" name="senha_usuarios" type="password">
                             <br><br><br><br>
                                 
                             <input type="hidden" name="id_usuarios" value="<?php echo $id_session;?>">
