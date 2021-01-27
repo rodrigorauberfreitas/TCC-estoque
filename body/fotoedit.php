@@ -42,7 +42,7 @@
 									<input type="file" name="imagem">
 								</div>
 								<div class="file-path-wrapper">
-									<input class="file-path validate" type="text">
+									<input class="file-path validate white-text" type="text">
 								</div>
 							</div>
 
