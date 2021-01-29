@@ -123,7 +123,7 @@
 				<td><?php echo $dado["nomeprod_historico"];?></td>
 				<td><?php echo $dado["quantidade_historico"] . $valorprod;?></td>
 				<td><?php echo $dado["data_historico"] . " às " . $dado["hora_historico"];?></td>
-				<td><?php echo $usuario;?></td>
+				<td><a href="./perfil2.php?id_outrousu=<?php echo $idusu;?>" class="black-text"><?php echo $usuario;?></a></td>
                 <td><?php echo $status;?></td>
 
 				

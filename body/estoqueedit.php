@@ -36,27 +36,11 @@
 <html>
 <head>
 <title>Editar Produto</title>
-    <meta charset="utf-8">
-    <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
-      <link rel = "stylesheet"
-         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-      <link rel = "stylesheet"
-         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-      <script type = "text/javascript"
-         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
-      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
-      </script> 
-      
-      <script>
-         $(document).ready(function() {
-            $('select').material_select();
-         });
-      </script>
-
    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <meta charset="utf-8">
 </head>
 <body class="blue-grey darken-2">
    <nav>
@@ -87,32 +71,49 @@
                         <h4 class="titulo">Edição de Produtos</h4> <br>
                         
                         Nome do produto 
-                        <input type="text" name="nome_prod" value="<?php echo $array['nome_prodquimico']; ?>"> 
+                        <input class="white-text" type="text" name="nome_prod" value="<?php echo $array['nome_prodquimico']; ?>"> 
                         <br><br>
                         
                         Quantidade do produto         
-                        <input type="number" name="quant_prod" value="<?php echo $array['quantidade_prodquimico']; ?>">
+                        <input class="white-text" type="number" name="quant_prod" value="<?php echo $array['quantidade_prodquimico']; ?>">
                         
                         
-                        <select id="medidas" name="medida_prod" class="cadbar3">
-                           <option value="1" selected>Gramas (g)</option>
-                           <option value="2">Quilogramas (KG)</option>
-                           <option value="3">Mililitros (mL)</option>
-                           <option value="4">Litros (L)</option>
-                        </select>
+                        <label>
+                           <input name="medida_prod" class="with-gap" type="radio" value="1" checked>
+                           <span>Gramas</span>
+                        </label>
+                        
+                        
+                        <label>
+                           <input name="medida_prod" class="with-gap" type="radio" value="2">
+                           <span>Quilogramas</span>
+                        </label>
+                        
+                        
+                        <label>
+                           <input name="medida_prod" class="with-gap" type="radio" value="3">
+                           <span>Mililitros</span>
+                        </label>
+                        
+                        
+                        <label>
+                           <input name="medida_prod" class="with-gap" type="radio" value="4">
+                           <span>Litros</span>
+                        </label>
+                        <br><br><br>
                         
                         
                         <br><br>
                         
                         Fórmula do produto 
-                        <input type="text" name="formula_prod" value="<?php echo $array['formula_prodquimico']; ?>">   <br> <br>
+                        <input class="white-text" type="text" name="formula_prod" value="<?php echo $array['formula_prodquimico']; ?>">   <br> <br>
                         
 
                         Local de armazenamento
-                        <input type="text" name="local_prod" value="<?php echo $array['local_prodquimico']; ?>">                  <br><br>
+                        <input class="white-text" type="text" name="local_prod" value="<?php echo $array['local_prodquimico']; ?>">                  <br><br>
                         
                         
-                        Outras observações <textarea name="obs_prod"><?php echo $array['observacao_prodquimico']; ?></textarea>  <br>
+                        Outras observações <textarea class="white-text" name="obs_prod"><?php echo $array['observacao_prodquimico']; ?></textarea>  <br>
                        
                         <br>
                         <button class="btn waves-effect waves-light blue-grey darken-2" type="submit" name="action">Aplicar

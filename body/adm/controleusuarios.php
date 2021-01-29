@@ -101,10 +101,12 @@
 				}else{
 					$status = "Desativado";
 				}
+
+				$idusu= $dado['id_usuarios'];
 				?>
 				
 			<tr>
-				<td><?php echo $dado["nome_usuarios"];?></td>
+				<td><a href="../perfil3.php?id_outrousu=<?php echo $idusu;?>" class="black-text"><?php echo $dado["nome_usuarios"];?></a></td>
 				<td><?php echo $dado["email_usuarios"];?></td>
 				<td><?php echo $tipousu;?></td>
 				<td><?php echo $status;?></td>

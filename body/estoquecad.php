@@ -23,25 +23,18 @@
     <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
       <link rel = "stylesheet"
          href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-      <link rel = "stylesheet"
-         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-      <script type = "text/javascript"
-         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
-      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
-      </script> 
+              
       
-      <script>
-         $(document).ready(function() {
-            $('select').material_select();
-         });
-      </script>
+      
+       
+     
 
 
 
    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body class="blue-grey darken-2">
       <nav>
@@ -66,42 +59,60 @@
          </div>
             
 
-         <div class="col s6 blue-grey darken-2 center">
-            <div class="cadbar blue-grey darken-4 center"> 
+         <div class="col s6 blue-grey darken-2 center white-text">
+            <div class="cadbar blue-grey darken-4 center white-text"> 
                <div class="cadbar2">
                   <br>
                   
                   <h4 class="titulo">Cadastro de Produtos</h4> <br>
                            
                   Nome do produto 
-                  <input type="text" name="nome_prod"> <br><br>
+                  <input type="text" name="nome_prod" class="white-text"> <br><br>
                            
                   Quantidade do produto            
-                  <input type="text" name="quant_prod">
+                  <input type="text" name="quant_prod" class="white-text">
 
-                  <div class="cadbar3">     
-                     <select id="medidas" name="medida_prod">
-                        <option value="1" selected>Gramas (g)</option>
-                        <option value="2">Quilogramas (KG)</option>
-                        <option value="3">Mililitros (mL)</option>
-                        <option value="4">Litros (L)</option>
-                     </select>
-                  </div>
-                  <br><br>
+                  
+                     <label>
+                     <input name="medida_prod" class="with-gap" type="radio" value="1" checked>
+                     <span>Gramas</span>
+                     </label>
+                     
+                  
+                     <label>
+                     <input name="medida_prod" class="with-gap" type="radio" value="2">
+                     <span>Quilogramas</span>
+                     </label>
+                  
+                  
+                     <label>
+                     <input name="medida_prod" class="with-gap" type="radio" value="3">
+                     <span>Mililitros</span>
+                     </label>
+                  
+                  
+                     <label>
+                     <input name="medida_prod" class="with-gap" type="radio" value="4">
+                     <span>Litros</span>
+                     </label>
+                     <br><br><br>
+                  
+                    
+                     
                            
                   Fórmula do produto 
-                  <input type="text" name="formula_prod">   <br><br>
+                  <input type="text" name="formula_prod" class="white-text">   <br><br>
                            
                   Local de armazenamento
-                  <input type="text" name="local_prod">                  <br><br>
+                  <input type="text" name="local_prod" class="white-text">                  <br><br>
                   
                   Inserir foto
                   <input type="file" name="imagem"> <br><br>
                            
                   Outras observações 
-                  <textarea name="obs_prod"></textarea>  <br><br>
+                  <textarea name="obs_prod" class="white-text"></textarea>  <br><br>
 
-                  <button onClick="javascript:setaData();" class="btn waves-effect waves-light blue-grey darken-2" type="submit" name="action">Cadastrar
+                  <button class="btn waves-effect waves-light blue-grey darken-2" type="submit" name="action">Cadastrar
                   <i class="material-icons right">check</i></button>
 
             </form>
