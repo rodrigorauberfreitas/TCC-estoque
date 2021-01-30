@@ -14,9 +14,6 @@
 
 }
 
-.borda2{
-    
-}
 
 .centro{
     height: 500px;
@@ -64,12 +61,7 @@
     
 }
 
-.foto_area{
-   
-    
 
-
-}
 
 .form-inline, .center-text {
     display: flex;
