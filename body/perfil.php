@@ -40,9 +40,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="utf-8">
 </head>
-<body class="blue-grey darken-2">
+<body class="cyan lighten-4">
     <nav>
-        <div class="nav-wrapper blue-grey darken-4">
+        <div class="nav-wrapper cyan">
             <a href="./pginicial.php" class="brand-logo center">QuimicStock</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="./pginicial.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
@@ -60,19 +60,19 @@
         </div>
     </nav>
     <br>
-    <div class="container responsive center z-depth-5 white-text">
-        <div class="row responsive blue-grey darken-4">
+    <div class="container responsive center white-text">
+        <div class="row responsive cyan darken-1">
             <div class="foto_area">    
                 <div class="col s3">
                     <br>
                     <img class="responsive-img" src="../fotos/<?php echo $id . ".jpg"; ?>">
                     <br><br>
-                    <a class="waves-effect waves-light btn blue-grey darken-2" href="./fotoedit.php?id=<?php echo $id;?>"><i class="material-icons right">add_to_photos</i>Alterar Foto</a>
+                    <a class="waves-effect waves-light btn cyan lighten-5 blue-grey-text text-darken-4" href="./fotoedit.php?id=<?php echo $id;?>"><i class="material-icons right">add_to_photos</i>Alterar Foto</a>
                 </div>
             </div>
 
-            <div class="col s6 blue-grey darken-2 center">
-                <div class="log blue-grey darken-4 center"> 
+            <div class="col s6 cyan lighten-4 center">
+                <div class="log cyan darken-1 center"> 
                     <br>
                     <h4 class="titulo"> Perfil </h4>
                 
@@ -88,7 +88,7 @@
                     Senha
                     <div class="borda">********** </div>
                     <br><br><br><br>
-                    <a href="./perfiledit.php" class="waves-effect waves-light btn blue-grey darken-2"><i class="material-icons right">edit</i>Editar</a>
+                    <a href="./perfiledit.php" class="waves-effect waves-light btn cyan lighten-5 blue-grey-text text-darken-4"><i class="material-icons right">edit</i>Editar</a>
                 </div> 
             </div> 
 

@@ -40,9 +40,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="blue-grey darken-2">
+<body class="cyan lighten-4">
 	<nav>
-        <div class="nav-wrapper blue-grey darken-4">
+        <div class="nav-wrapper cyan">
             <a href="#" class="brand-logo center">QuimicStock</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="./pginicial.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
@@ -60,16 +60,16 @@
         </div>
     </nav>
 	
-		<h3 class="white-text center">Histórico de Transações</h3>
+		<h3 class="blue-grey-text text-darken-4 center">Histórico de Transações</h3>
 	
 	<div class="container">
 	
 		<nav>
-            <div class="nav-wrapper blue-grey darken-4">
+            <div class="nav-wrapper cyan lighten-5">
             <form method="POST">
                 <div class="input-field">
-                <input id="search" name="nomeprod_historico" type="search" placeholder="Buscar Produto" value="<?php echo $nomeprod_his;?>">
-                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <input id="search" name="nomeprod_historico" class="blue-grey-text text-darken-4" type="search" placeholder="Buscar Produto" value="<?php echo $nomeprod_his;?>">
+                <label class="label-icon" for="search"><i class="material-icons blue-grey-text text-darken-4">search</i></label>
                 <i class="material-icons">close</i>
                 </div>
             </form>
@@ -79,7 +79,7 @@
 		
 		<table class="striped centered">
 			
-			<thead class="white-text"> 	
+			<thead class="blue-grey-text text-darken-4"> 	
 			<th>Nome do Produto</th>
 			<th>Quantidade do Produto que Entrou/Saiu</th>
 			<th>Data da Transação</th>
@@ -119,7 +119,7 @@
                 }
 				?>
 				
-			<tr>
+			<tr class="blue-grey-text text-darken-4">
 				<td><?php echo $dado["nomeprod_historico"];?></td>
 				<td><?php echo $dado["quantidade_historico"] . $valorprod;?></td>
 				<td><?php echo $dado["data_historico"] . " às " . $dado["hora_historico"];?></td>

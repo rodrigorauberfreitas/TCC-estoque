@@ -37,14 +37,14 @@
 <head>
 <title>Editar Produto</title>
    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <link rel="stylesheet" href="../css/materialize/css/materialize.min.css">
+   <script src="../css/materialize/js/materialize.min.js"></script>
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <meta charset="utf-8">
 </head>
-<body class="blue-grey darken-2">
+<body class="cyan lighten-4">
    <nav>
-        <div class="nav-wrapper blue-grey darken-4">
+        <div class="nav-wrapper cyan">
             <a href="./pginicial.php" class="brand-logo center">QuimicStock</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                <li><a href="./produto.php<?php echo "?id_prod=" . $id_prod; ?>"><i class="material-icons left">chevron_left</i>Voltar</a></li>
@@ -57,48 +57,48 @@
     </nav>
 
       <br>
-         <div class="container responsive center z-depth-5 white-text">
-            <div class="row responsive blue-grey darken-4">
+         <div class="container responsive center white-text input-field">
+            <div class="row responsive cyan darken-1">
                <div class="col s3">
                   <form method="POST" action="../includes/estoqueedit_inc.php">
                      <input type="hidden" name="id_prod" value="<?php echo $id_prod;?>">
                </div>
 
-               <div class="col s6 blue-grey darken-2 center">
-                  <div class="editbar blue-grey darken-4 center">
+               <div class="col s6 cyan lighten-4 center">
+                  <div class="editbar cyan darken-1 center">
                      <div class="editbar2">
                         <br>
                         <h4 class="titulo">Edição de Produtos</h4> <br>
                         
                         Nome do produto 
-                        <input class="white-text" type="text" name="nome_prod" value="<?php echo $array['nome_prodquimico']; ?>"> 
+                        <input class="blue-grey-text text-darken-4" type="text" name="nome_prod" value="<?php echo $array['nome_prodquimico']; ?>"> 
                         <br><br>
                         
                         Quantidade do produto         
-                        <input class="white-text" type="number" name="quant_prod" value="<?php echo $array['quantidade_prodquimico']; ?>">
+                        <input class="blue-grey-text text-darken-4" type="text" name="quant_prod" value="<?php echo $array['quantidade_prodquimico']; ?>">
                         
-                        
+                        <br>
                         <label>
-                           <input name="medida_prod" class="with-gap" type="radio" value="1" checked>
-                           <span>Gramas</span>
+                           <input name="medida_prod" class="with-gap card-panel black" type="radio" value="1" checked>
+                           <span class="blue-grey-text text-darken-4">Gramas</span>
                         </label>
                         
                         
                         <label>
                            <input name="medida_prod" class="with-gap" type="radio" value="2">
-                           <span>Quilogramas</span>
+                           <span class="blue-grey-text text-darken-4">Quilogramas</span>
                         </label>
                         
                         
                         <label>
                            <input name="medida_prod" class="with-gap" type="radio" value="3">
-                           <span>Mililitros</span>
+                           <span class="blue-grey-text text-darken-4">Mililitros</span>
                         </label>
                         
                         
                         <label>
                            <input name="medida_prod" class="with-gap" type="radio" value="4">
-                           <span>Litros</span>
+                           <span class="blue-grey-text text-darken-4">Litros</span>
                         </label>
                         <br><br><br>
                         
@@ -106,17 +106,17 @@
                         <br><br>
                         
                         Fórmula do produto 
-                        <input class="white-text" type="text" name="formula_prod" value="<?php echo $array['formula_prodquimico']; ?>">   <br> <br>
+                        <input class="blue-grey-text text-darken-4" type="text" name="formula_prod" value="<?php echo $array['formula_prodquimico']; ?>">   <br> <br>
                         
 
                         Local de armazenamento
-                        <input class="white-text" type="text" name="local_prod" value="<?php echo $array['local_prodquimico']; ?>">                  <br><br>
+                        <input class="blue-grey-text text-darken-4" type="text" name="local_prod" value="<?php echo $array['local_prodquimico']; ?>">                  <br><br>
                         
                         
-                        Outras observações <textarea class="white-text" name="obs_prod"><?php echo $array['observacao_prodquimico']; ?></textarea>  <br>
+                        Outras observações <textarea class="blue-grey-text text-darken-4" name="obs_prod"><?php echo $array['observacao_prodquimico']; ?></textarea>  <br>
                        
                         <br>
-                        <button class="btn waves-effect waves-light blue-grey darken-2" type="submit" name="action">Aplicar
+                        <button class="btn waves-effect waves-light cyan lighten-5 blue-grey-text text-darken-4" type="submit" name="action">Aplicar
                                  <i class="material-icons right">check</i></button>
                      </div>
                   </div>

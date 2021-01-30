@@ -42,9 +42,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="utf-8">
 </head>
-<body class="blue-grey darken-2">
+<body class="cyan lighten-4">
     <nav>
-        <div class="nav-wrapper blue-grey darken-4">
+        <div class="nav-wrapper cyan">
             <a href="./pginicial.php" class="brand-logo center">QuimicStock</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="./adm/controleusuarios.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
@@ -62,8 +62,8 @@
         </div>
     </nav>
     <br>
-    <div class="container responsive center z-depth-5 white-text">
-        <div class="row responsive blue-grey darken-4">
+    <div class="container responsive center white-text">
+        <div class="row responsive cyan darken-1">
             <div class="foto_area">    
                 <div class="col s3">
                     <br>
@@ -72,8 +72,8 @@
                 </div>
             </div>
 
-            <div class="col s6 blue-grey darken-2 center">
-                <div class="log blue-grey darken-4 center"> 
+            <div class="col s6 cyan lighten-4 center">
+                <div class="log cyan darken-1 center"> 
                     <br>
                     <h4 class="titulo"> Perfil </h4>
                 

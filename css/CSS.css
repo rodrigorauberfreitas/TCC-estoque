@@ -2,6 +2,7 @@
 
 .log{
     height: 300px ;
+    
 
 }
 
@@ -22,11 +23,11 @@
 
 
 .titulo{
-    border-bottom: 3px solid #455a64 ;
+    border-bottom: 3px solid #b2ebf2 ;
 }
 
 .bordinha{
-    border-left: 3px solid #455a64;
+    border-left: 3px solid #b2ebf2;
 }
 
 .input_margin{
@@ -36,6 +37,48 @@
 
 
 
+
+::-webkit-input-placeholder {
+    color: #546e7a;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    color: #546e7a;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    color: #546e7a;  
+ }
+ 
+ :-ms-input-placeholder {  
+    color: #546e7a;  
+ }
+
+
+ 
+
+
+ 
+ .input-field input[type]:not([readonly]),
+ .input-field input[type]:focus:not([readonly]),
+ .input-field textarea:not([readonly]),
+ .input-field textarea:focus:not([readonly]) {
+   border-bottom: 1px solid white;
+   
+ }
+
+
+
+ label focus color */
+ .input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+  color: #263238 !important;
+ }
+
+/* label underline focus color */
+ .input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #263238 !important;
+  box-shadow: 0 1px 0 0 #263238 !important;
+ }
 
 
 

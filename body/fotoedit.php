@@ -14,9 +14,9 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<meta charset="utf-8">
 </head>
-<body class="blue-grey darken-2">
+<body class="cyan lighten-4">
 <nav>
-        <div class="nav-wrapper blue-grey darken-4">
+        <div class="nav-wrapper cyan">
             <a href="./pginicial.php" class="brand-logo center">QuimicStock</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="./perfil.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
@@ -28,26 +28,26 @@
         </div>
     </nav>
 	<br>
-	<div class="container responsive center z-detph-5">
-		<div class="row responsive blue-grey darken-4">
+	<div class="container responsive center input-field">
+		<div class="row responsive cyan darken-1">
 			<div class="col s3"></div>
-			<div class="col s6 blue-grey darken-2">
-				<div class="fotoedit_size blue-grey darken-4">
+			<div class="col s6 cyan lighten-4">
+				<div class="fotoedit_size cyan darken-1">
 					<div class="fotoedit_margin">
-						<br><br><br>
+						<br><br><br><br><br>
 						<form action="../includes/fotoedit_inc.php" method="POST" enctype="multipart/form-data">
-							<div class="file-field input-field">
-								<div class="btn blue-grey darken-2">
+							<div class="file-field">
+								<div class="btn cyan lighten-5 blue-grey-text text-darken-4">
 									<span>Foto</span>
 									<input type="file" name="imagem">
 								</div>
 								<div class="file-path-wrapper">
-									<input class="file-path validate white-text" type="text">
+									<input class="file-path validate blue-grey-text text-darken-4" type="text">
 								</div>
 							</div>
 
 							<input type="hidden" name="id" value="<?php echo $id_usuario ?>">
-							<button class="waves-effect waves-light btn blue-grey darken-2" type="submit">Enviar</button>
+							<button class="waves-effect waves-light btn cyan lighten-5 blue-grey-text text-darken-4" type="submit">Enviar</button>
 						</form>
 					</div>
 				</div>

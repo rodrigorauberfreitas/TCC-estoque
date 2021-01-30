@@ -23,22 +23,15 @@
     <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
       <link rel = "stylesheet"
          href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-              
-      
-      
-       
-     
-
-
-
+  
    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <link rel="stylesheet" href="../css/materialize/css/materialize.min.css">
+   <script src="../css/materialize/js/materialize.min.js"></script>
 
 </head>
-<body class="blue-grey darken-2">
+<body class="cyan lighten-4">
       <nav>
-        <div class="nav-wrapper blue-grey darken-4">
+        <div class="nav-wrapper cyan">
             <a href="./pginicial.php" class="brand-logo center">QuimicStock</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="./pginicial.php"><i class="material-icons left">chevron_left</i>Voltar</a></li>
@@ -50,8 +43,8 @@
         </div>
     </nav>
    <br>   
-   <div class="container responsive center z-depth-5 white-text">
-      <div class="row responsive blue-grey darken-4">
+   <div class="container responsive center white-text input-field">
+      <div class="row responsive cyan darken-1">
                
          <div class="col s3">
             <form method="POST" action="../includes/estoquecad_inc.php" enctype="multipart/form-data">
@@ -59,41 +52,41 @@
          </div>
             
 
-         <div class="col s6 blue-grey darken-2 center white-text">
-            <div class="cadbar blue-grey darken-4 center white-text"> 
+         <div class="col s6 cyan lighten-4 center white-text">
+            <div class="cadbar cyan darken-1 center white-text"> 
                <div class="cadbar2">
                   <br>
                   
                   <h4 class="titulo">Cadastro de Produtos</h4> <br>
                            
                   Nome do produto 
-                  <input type="text" name="nome_prod" class="white-text"> <br><br>
+                  <input type="text" name="nome_prod" class="blue-grey-text text-darken-4"> <br><br>
                            
                   Quantidade do produto            
-                  <input type="text" name="quant_prod" class="white-text">
+                  <input type="text" name="quant_prod" class="blue-grey-text text-darken-4">
 
                   
                      <label>
                      <input name="medida_prod" class="with-gap" type="radio" value="1" checked>
-                     <span>Gramas</span>
+                     <span class="blue-grey-text text-darken-4">Gramas</span>
                      </label>
                      
                   
                      <label>
                      <input name="medida_prod" class="with-gap" type="radio" value="2">
-                     <span>Quilogramas</span>
+                     <span class="blue-grey-text text-darken-4">Quilogramas</span>
                      </label>
                   
                   
                      <label>
                      <input name="medida_prod" class="with-gap" type="radio" value="3">
-                     <span>Mililitros</span>
+                     <span class="blue-grey-text text-darken-4">Mililitros</span>
                      </label>
                   
                   
                      <label>
                      <input name="medida_prod" class="with-gap" type="radio" value="4">
-                     <span>Litros</span>
+                     <span class="blue-grey-text text-darken-4">Litros</span>
                      </label>
                      <br><br><br>
                   
@@ -101,18 +94,18 @@
                      
                            
                   Fórmula do produto 
-                  <input type="text" name="formula_prod" class="white-text">   <br><br>
+                  <input type="text" name="formula_prod" class="blue-grey-text text-darken-4">   <br><br>
                            
                   Local de armazenamento
-                  <input type="text" name="local_prod" class="white-text">                  <br><br>
+                  <input type="text" name="local_prod" class="blue-grey-text text-darken-4">                  <br><br>
                   
                   Inserir foto
                   <input type="file" name="imagem"> <br><br>
                            
                   Outras observações 
-                  <textarea name="obs_prod" class="white-text"></textarea>  <br><br>
+                  <textarea name="obs_prod" class="blue-grey-text text-darken-4"></textarea>  <br><br>
 
-                  <button class="btn waves-effect waves-light blue-grey darken-2" type="submit" name="action">Cadastrar
+                  <button class="btn waves-effect waves-light cyan lighten-5 blue-grey-text text-darken-4" type="submit" name="action">Cadastrar
                   <i class="material-icons right">check</i></button>
 
             </form>
