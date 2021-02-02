@@ -1,7 +1,7 @@
 <?php
    include "../../includes/logout_inc.php";
    include "../../includes/conexao.php";
-
+ 
     $id_usuario = $_SESSION['id_usuario'];
 	
     $consulta2 = "SELECT tipo_usuarios FROM usuarios WHERE id_usuarios = '$id_usuario';";
@@ -22,7 +22,7 @@
 	   $filtro = " WHERE LOWER (nome_usuarios) like '%$nome_usu%'";
    }
 
-   $consulta = "SELECT nome_usuarios, email_usuarios, id_usuarios, tipo_usuarios, ativo_usuarios FROM usuarios $filtro";
+   $consulta = "SELECT nome_usuarios, email_usuarios, id_usuarios, tipo_usuarios, ativo_usuarios FROM usuarios $filtro ORDER BY nome_usuarios ASC";
    $con = mysqli_query($conn, $consulta); 
 
 ?>
